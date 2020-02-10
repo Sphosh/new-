@@ -1,0 +1,34 @@
+<html>	
+<head>
+ 
+<title>ADH401 Project</title>
+</head>
+<body>
+  <h2>Tweet Management System</h2>
+    
+    <form>
+    <panelGrid columns="2">
+    <outputLabel value="What's on your Mind: "/>
+    <inputText value="#{tweetontroller.tweet.tweetBody}"></inputText>
+    <commandButton value="Post" action="#{tweetController.postTweet}"></commandButton>
+  
+      </panelGrid>
+    </form>
+    
+    <h2>Past Tweets</h2>
+    <form>
+    <panelGrid columns="2">
+    <repeat var="t" value="#{tweetController.getAllTweets()}">
+    <outputText value="Tweet: " />
+    <outputText value="#{t.getTweetBody()}" />
+    <br/>
+    <outputText value="#{t.getTimestamp()}" />
+    <br/>
+    <br/>
+    </x:repeat>
+    </panelGrid>
+    </form>
+</body>
+
+</html>
+
